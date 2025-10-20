@@ -1,0 +1,154 @@
+/* ------ GLOBAL ------ */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-image: url("../images/R0005312.jpg"); /* replace with your own image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* color + opacity */
+  z-index: -1;
+  backdrop-filter: blur(1px); /* blur softness */
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: rgba(47, 58, 69, 0.9);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+header,
+footer {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ------ NAVIGATION ------ */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  background-color: #007acc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+nav a:active {
+  background-color: #004c80;
+}
+
+#bio-panels {
+  width: 95%;
+  margin: 40px auto;
+  text-align: center;
+  padding: 60px 40px;
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+}
+
+#bio-panels h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2f3a45;
+  margin-bottom: 15px;
+}
+
+.staff {
+  width: 95%;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  text-align: left;
+  background-color: rgba(102, 93, 93, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.staff-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.staff.reverse {
+  flex-direction: row-reverse;
+}
+
+.staff h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2f3a45;
+  margin-bottom: 10px;
+}
+
+.staff p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+/* ====== FOOTER (Bottom Field) ====== */
+footer {
+  width: 95%;
+  margin: 40px auto;
+  text-align: center;
+  padding: 60px 30px;
+  background-color: rgba(47, 58, 69, 0.9);
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  border-radius: 12px;
+}
+
+footer p + p {
+  margin-top: 10px;
+}
