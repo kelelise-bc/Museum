@@ -2,7 +2,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #222;
-  background-image: url("../images/R0005312.jpg"); /* replace with your own image */
+  background-image: url("../images/site_background.jpg"); /* replace with your own image, image belongs to Kelly Daniel*/
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -65,8 +65,8 @@ nav a:active {
   margin: 40px auto;
   text-align: center;
   padding: 60px 40px;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.55); /* color + opacity */
+  backdrop-filter: blur(4px); /* blur softness */
   border-radius: 12px;
 }
 
@@ -121,11 +121,11 @@ nav a:active {
   flex: 1 1 30%;
   max-width: 30%;
   min-width: 300px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.55); /* color + opacity */
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px); /* blur softness */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
