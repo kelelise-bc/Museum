@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Kelly Daniel" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Shopping Cart | Museum of Lost Photographs</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f8f8;
+        color: #222;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: rgba(47, 58, 69, 0.9);
+        color: white;
+        text-align: center;
+        padding: 28px 25px;
+        width: 93%;
+        margin: 17px auto 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      header h1 {
+        font-size: 2.6rem;
+        font-weight: 300;
+        letter-spacing: -0.2px;
+        margin-bottom: 18px;
+        color: #fdfdfd;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+        margin: 15px 0 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        background-color: #007acc;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: 300;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      nav a:hover {
+        background-color: #005fa3;
+        transform: scale(1.05);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .controls {
+        margin: 12px 0 16px;
+      }
+
+      .empty {
+        padding: 12px;
+        border: 1px dashed #666;
+        font-style: italic;
+        background: #f9f9f9;
+        border-radius: 6px;
+      }
+
+      pre#summary {
+        background: #f8f8f8;
+        padding: 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      .actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      button,
+      a.button {
+        background-color: #2f3a45;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      button:hover,
+      a.button:hover {
+        background-color: #007acc;
+      }
+      /* Aligns currency values in summary block */
+      #summary {
+        font-family: "Courier New", monospace;
+        white-space: pre;
+        text-align: right;
+        padding: 1rem;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        font-feature-settings: "tnum", "1num";
+        line-height: 1.4;
+      }
+
+      /* Keeps the label text aligned left while values stay right-aligned */
+      #summary::first-line {
+        text-align: left;
+      }
+      .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-table th,
+      .cart-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      /* Left-align only the Item column */
+      .cart-table td:first-child,
+      .cart-table th:first-child {
+        text-align: left;
+      }
+      .cart-table th {
+        background-color: #f2f2f2;
+        font-weight: 600;
+      }
+
+      .cart-table img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Shopping Cart</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="shop.html">Museum Shop</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="controls">
+        <label
+          ><input type="checkbox" id="memberToggle" /> Member Discount
+          (15%)</label
+        >
+      </div>
+
+      <div id="emptyMsg" class="empty" hidden>Your cart is empty.</div>
+      <div id="items" hidden></div>
+      <pre id="summary" hidden></pre>
+
+      <div class="actions">
+        <button id="clearBtn">Clear Cart</button>
+        <a href="shop.html" class="button">Keep Shopping</a>
+      </div>
+    </main>
+
+    <script>
+      /* =================== PIPE FROM shop.html =================== */
+      const CART_KEY = "museumCartV1";
+
+      function readCart() {
+        try {
+          return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCart(cart) {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      }
+
+      /* ====================== UTILITIES & CONSTANTS =========================== */
+      function money(n) {
+        const sign = n < 0 ? -1 : 1;
+        const s = "$" + Math.abs(n).toFixed(2);
+        return sign < 0 ? "(" + s + ")" : s;
+      }
+
+      const TAX_RATE = 0.102;
+      const MEMBER_DISCOUNT_RATE = 0.15;
+      const SHIPPING_RATE = 25.0;
+      const VOLUME_TIERS = [
+        [0.0, 49.99, 0.0],
+        [50.0, 99.99, 0.05],
+        [100.0, 199.99, 0.1],
+        [200.0, Infinity, 0.15],
+      ];
+
+      function volumeRate(total) {
+        for (const [min, max, rate] of VOLUME_TIERS) {
+          if (total >= min && total <= max) return rate;
+        }
+        return 0;
+      }
+
+      function removeItem(id) {
+        const next = readCart().filter((it) => it.id !== id);
+        writeCart(next);
+        render();
+      }
+
+      function clearCart() {
+        writeCart([]);
+        document.getElementById("memberToggle").checked = false;
+        render();
+      }
+
+      /* ====================== STUDENT WORK STARTS HERE ========================= */
+      function render() {
+        const itemsDiv = document.getElementById("items");
+        const summaryPre = document.getElementById("summary");
+        const emptyMsg = document.getElementById("emptyMsg");
+        const isMember = document.getElementById("memberToggle").checked;
+
+        let cart = readCart().filter((it) => it.qty > 0 && it.unitPrice > 0);
+
+        // if cart empty → show message, hide other areas
+        if (cart.length === 0) {
+          emptyMsg.hidden = false;
+          itemsDiv.hidden = true;
+          summaryPre.hidden = true;
+          return;
+        }
+
+        emptyMsg.hidden = true;
+        itemsDiv.hidden = false;
+        summaryPre.hidden = false;
+
+        // Build list of line items as table + thumbnails (Bonus)
+        let tableHTML = `
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Line Total</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
+        let itemTotal = 0;
+
+        cart.forEach((it) => {
+          const lineTotal = it.unitPrice * it.qty;
+          itemTotal += lineTotal;
+          tableHTML += `
+    <tr>
+      <td><img src="${it.image}" alt="${it.name}" /> ${it.name}</td>
+      <td>${it.qty}</td>
+      <td>${money(it.unitPrice)}</td>
+      <td>${money(lineTotal)}</td>
+      <td><button onclick="removeItem('${it.id}')">Remove</button></td>
+    </tr>`;
+        });
+
+        tableHTML += `
+    </tbody>
+  </table>`;
+
+        itemsDiv.innerHTML = tableHTML;
+
+        // Determine discount type
+        const volRate = volumeRate(itemTotal);
+        const volDiscount = itemTotal * volRate;
+        const memDiscount = itemTotal * MEMBER_DISCOUNT_RATE;
+
+        let appliedVolume = 0;
+        let appliedMember = 0;
+
+        if (isMember && volRate > 0) {
+          const choice = prompt(
+            "Only one discount may be applied. Type 'M' for Member or 'V' for Volume:"
+          );
+          if (choice && choice.toUpperCase() === "M") {
+            appliedMember = memDiscount;
+          } else if (choice && choice.toUpperCase() === "V") {
+            appliedVolume = volDiscount;
+          }
+        } else if (isMember) {
+          appliedMember = memDiscount;
+        } else {
+          appliedVolume = volDiscount;
+        }
+
+        // compute totals
+        const subtotal =
+          itemTotal - appliedVolume - appliedMember + SHIPPING_RATE;
+        const taxAmount = subtotal * TAX_RATE;
+        const invoiceTotal = subtotal + taxAmount;
+
+        // summary text (commission-style)
+        const summaryText = `
+Subtotal of Item Totals:     ${money(itemTotal)}
+Volume Discount:              ${money(-appliedVolume)}
+Member Discount:              ${money(-appliedMember)}
+Shipping:                     ${money(SHIPPING_RATE)}
+Subtotal (Taxable Amount):    ${money(subtotal)}
+Tax Rate %:                   ${(TAX_RATE * 100).toFixed(1)}%
+Tax Amount $:                 ${money(taxAmount)}
+-----------------------------------------
+Invoice Total:                ${money(invoiceTotal)}
+  `;
+
+        summaryPre.textContent = summaryText;
+      }
+
+      /* ====================== END STUDENT WORK ========================= */
+
+      document
+        .getElementById("memberToggle")
+        .addEventListener("change", render);
+      document.getElementById("clearBtn").addEventListener("click", clearCart);
+      render();
+    </script>
+  </body>
+</html>

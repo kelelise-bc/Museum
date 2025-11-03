@@ -228,7 +228,12 @@ footer {
   color: white;
   font-size: 0.9rem;
   line-height: 1.6;
+  letter-spacing: 0.2px;
   border-radius: 12px;
+}
+
+footer p + p {
+  margin-top: 10px; /*Gives extra cush between p's*/
 }
 /* ===== Modal Overlay and Content ===== */
 .modal {
@@ -296,7 +301,7 @@ footer {
 .section-intro {
   text-align: center;
   max-width: 900px;
-  margin: 0 auto 2rem; /* centers it neatly and gives space below */
+  margin: 0 auto 2rem;
   font-size: 1.3rem;
   line-height: 1.6;
   color: #222;

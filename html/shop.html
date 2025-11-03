@@ -37,15 +37,28 @@
       }  ===== */
 
       /* ===== Header ===== */
+      /* ===== Header Layout ===== */
+      /* ===== Header Layout ===== */
       header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: rgba(47, 58, 69, 0.9);
         color: white;
-        text-align: center;
-        padding: 28px 0;
-        width: 95%;
+        padding: 28px 40px;
+        width: 93%;
         margin: 0 auto 24px;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      /* ===== Left Side: Title + Navigation ===== */
+      .header-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       header h1 {
@@ -54,6 +67,7 @@
         letter-spacing: -0.2px;
         margin-bottom: 18px;
         color: #fdfdfd;
+        text-align: center;
       }
 
       /* ===== Navigation ===== */
@@ -83,6 +97,36 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       }
 
+      /* ===== Right Side: View Cart Button ===== */
+      .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      #viewCartBtn {
+        background-color: #d97706; /* amber */
+        color: white;
+        border: none;
+        padding: 12px 26px;
+        border-radius: 8px;
+        font-weight: 300;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        /* fixed btn to viewport */
+        position: fixed;
+        top: 30px;
+        right: 60px;
+        z-index: 1000; /* stays above other content */
+      }
+
+      #viewCartBtn:hover {
+        background-color: #b45309;
+        transform: scale(1.05);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      }
       /* ===== Museum Shop Hero Section ===== */
       .shop-hero {
         position: relative;
@@ -266,15 +310,22 @@
 
   <body class="shop-page">
     <header>
-      <h1>Museum of Lost Photographs</h1>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="staff.html">Staff</a></li>
-          <li><a href="collections.html">Collections</a></li>
-          <li><a href="shop.html">Museum Shop</a></li>
-        </ul>
-      </nav>
+      <div class="header-left">
+        <h1>Museum of Lost Photographs</h1>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="shop.html">Museum Shop</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right">
+        <button onclick="location.href='cart.html'" id="viewCartBtn">
+          View Cart
+        </button>
+      </div>
     </header>
 
     <!-- Museum Shop Hero Section -->
@@ -303,12 +354,18 @@
           and annotations from <em>The Contact Sheet of the Vanished Block</em>.
         </p>
         <p><strong>Price:</strong> $18.00</p>
+        <span class="qty-badge" aria-live="polite"></span>
         <button
-          onclick="addToCart('Contact Sheet Zine')"
-          aria-label="Add 'The Vanished Block Contact Sheet Zine' to cart"
+          onclick="addToCart(this)"
+          data-id="item001"
+          data-name="Contact Sheet Zine"
+          data-price="18.00"
+          data-image="../images/Shop/contact_sheet_zine.jpg"
         >
           Add Contact Sheet Zine to Cart
         </button>
+
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
 
       <!-- Item 2 -->
@@ -326,12 +383,19 @@
           in light and memory.
         </p>
         <p><strong>Price:</strong> $24.00</p>
+
+        <span class="qty-badge" aria-live="polite"></span>
+
         <button
-          onclick="addToCart('Don’t Forget Journal')"
-          aria-label="Add 'Don’t Forget' Journal to cart"
+          onclick="addToCart(this)"
+          data-id="item002"
+          data-name="Don’t Forget Journal"
+          data-price="24.00"
+          data-image="../images/Shop/dont_forget_journal.jpg"
         >
           Add “Don’t Forget” Journal to Cart
         </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
 
       <!-- Item 3 -->
@@ -349,12 +413,19 @@
           playground.
         </p>
         <p><strong>Price:</strong> $14.00</p>
+
+        <span class="qty-badge" aria-live="polite"></span>
+
         <button
-          onclick="addToCart('J.L. Baseball Mitt Keychain')"
-          aria-label="Add 'J.L. Baseball Mitt Keychain' to cart"
+          onclick="addToCart(this)"
+          data-id="item003"
+          data-name="J.L. Baseball Mitt Keychain"
+          data-price="14.00"
+          data-image="../images/Shop/baseball_mitt_keychain.jpg"
         >
           Add J.L. Baseball Mitt Keychain to Cart
         </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
 
       <!-- Item 4 -->
@@ -371,12 +442,19 @@
           exposures recovered from the Falcon Optic camera above Grant Street.
         </p>
         <p><strong>Price:</strong> $38.00</p>
+
+        <span class="qty-badge" aria-live="polite"></span>
+
         <button
-          onclick="addToCart('Frame 24 Print')"
-          aria-label="Add 'Frame 24 Print' to cart"
+          onclick="addToCart(this)"
+          data-id="item004"
+          data-name="Frame 24 Print"
+          data-price="38.00"
+          data-image="../images/Shop/frame24_print.jpg"
         >
           Add Frame 24 Print to Cart
         </button>
+        <span class="qty-badge" aria-live="polite"></span>
       </div>
     </section>
 
@@ -394,16 +472,44 @@
 
     <!-- Footer -->
     <footer>
+      <p>This is a fictitious website created purely for academic purposes.</p>
       <p>
         <strong>AI + Human Collaboration Notice:</strong><br />
-        All souvenir concepts were created through AI and human co-design,
-        inspired by artifacts from the Museum’s Collections.
+        All <em>souvenir concepts</em> were generated with
+        <em>AI inspiration</em> drawn from the Museum’s Collections and curated,
+        edited, and verified by a human. Written content was conceived by the
+        museum’s creator and refined with
+        <em>AI assistance</em> (<em>ChatGPT</em>). Visual materials include
+        images created with <em>Bing AI Creations</em> and
+        <em>Adobe Firefly</em>. Any <em>Creative Commons</em> or
+        <em>public-domain images</em>
+        are credited in the site’s image directory.
       </p>
     </footer>
 
     <script>
-      function addToCart(itemId) {
-        alert("Added " + itemId + " to cart (functionality coming soon)");
+      function addToCart(btn) {
+        const id = btn.dataset.id;
+        const name = btn.dataset.name;
+        const unitPrice = Number(btn.dataset.price);
+        const image = btn.dataset.image;
+
+        // read cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("museumCartV1")) || [];
+
+        // check if item already exists in cart
+        const idx = cart.findIndex((it) => it.id === id);
+        if (idx >= 0) {
+          cart[idx].qty += 1;
+        } else {
+          cart.push({ id, name, unitPrice, qty: 1, image });
+        }
+
+        // write cart back to localStorage
+        localStorage.setItem("museumCartV1", JSON.stringify(cart));
+
+        // simple user feedback
+        alert(`${name} added to cart.`);
       }
 
       function openModal(imgElement) {
