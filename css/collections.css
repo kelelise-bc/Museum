@@ -105,6 +105,7 @@ nav a:hover {
   font-size: 0.95rem;
   margin: 1rem auto 2rem;
   opacity: 0.9;
+  color: #b8b5b5; /* light gray for soft contrast */
 }
 
 /* ------ SECTION WRAPPER ------ */
@@ -277,12 +278,12 @@ footer {
 /* History section images */
 .history-item img {
   display: block;
-  width: 70%; /* scales image nicely inside its container */
-  max-width: 600px; /* keeps it from stretching too wide */
-  height: auto; /* preserves natural aspect ratio */
-  margin: 0 auto 1.5rem; /* centers and adds space below */
-  border-radius: 8px; /* optional: softens corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25); /* subtle depth */
+  width: 70%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 .section-heading {
   text-align: center;
