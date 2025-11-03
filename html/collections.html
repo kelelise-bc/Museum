@@ -44,7 +44,12 @@
     <div class="subnav">
       <button onclick="showSection('archaeology')">Archaeology</button>
       <button onclick="showSection('anthropology')">Anthropology</button>
+      <button onclick="showSection('histories')">Histories</button>
     </div>
+
+    <p class="collection-hint">
+  Tip: Click any image to open its Interpretation modal and explore each artifact’s story.
+</p>
 
     <!-- ===== Archaeology Section ===== -->
     <section id="archaeology" class="collection-section">
@@ -54,7 +59,9 @@
       <article class="artifact-card">
         <img
           src="../images/Collections/contact_sheet_vanished_block.jpg"
-          alt="1950s photographic contact sheet showing building negatives from the vanished Grant Street Middle Block, with magnifying glass and pencil on archival desk"
+          alt="1950s photographic contact sheet showing building negatives from the vanished Grant Street Middle School Block, with magnifying glass and pencil on archival desk"
+          class="open-modal"
+          data-modal-target="#modal-text-contactsheet"
         />
         <div class="artifact-details">
           <h3>The Contact Sheet of the Vanished Block</h3>
@@ -135,6 +142,8 @@
         <img
           src="../images/Collections/letter_that_names_no_one.jpg"
           alt="A torn handwritten letter marked 'J.L.' resting on aged student records and lined paper from the Grant Street Middle archive"
+          class="open-modal"
+          data-modal-target="#modal-text-letter"
         />
         <div class="artifact-details">
           <h3>The Letter That Names No One</h3>
@@ -212,12 +221,13 @@
         </div>
       </article>
 
-      <!-- Artifact 3 -->
       <!-- Artifact A3 -->
       <article class="artifact-card">
         <img
           src="../images/Collections/camera_that_saw_twice.jpg"
           alt="Dust-covered vintage rangefinder camera resting on crumbling plaster near a broken window in an abandoned upstairs studio on Grant Street"
+          class="open-modal"
+          data-modal-target="#modal-text-camera"
         />
         <div class="artifact-details">
           <h3>The Camera That Saw Twice</h3>
@@ -294,6 +304,105 @@
       </article>
     </section>
 
+    <!-- Hidden modal content: The Contact Sheet of the Vanished Block -->
+    <div class="modal-item" id="modal-text-contactsheet" hidden>
+      <h2 id="modal-title">
+        The Contact Sheet of the Vanished Block — Collection Note
+      </h2>
+
+      <p>
+        <strong>Material:</strong> Resin-coated photographic paper with red and
+        white wax-pencil markings and a metal staple
+      </p>
+      <p>
+        <strong>Function (Hypothesized):</strong> Student proof sheet used to
+        evaluate negatives before enlargement
+      </p>
+      <p>
+        <strong>Location Found:</strong> Darkroom cabinet, Grant Street Middle
+        School, Chicago
+      </p>
+
+      <p>
+        Recovered from a sealed school darkroom cabinet, this 6×6 proof
+        sheet—marked with wax pencil and faintly scented of fixer—offers the
+        last known visual record of a vanished neighborhood. Once part of a
+        student photography project, it captures fragments of ordinary life:
+        storefronts, crosswalks, and the facade of Grant Street Middle School
+        before demolition during the Vanished Block redevelopment. The red
+        circles and arrows, drawn by a student hand, guide the eye toward
+        moments never printed. Its curled edges and rusted staple testify to
+        years trapped beneath rubble, yet the silver halides endure—proof of
+        both chemical resilience and human intention.
+      </p>
+    </div>
+
+    <!-- Hidden modal content: The Letter That Names No One -->
+    <div class="modal-item" id="modal-text-letter" hidden>
+      <h2 id="modal-title">The Letter That Names No One — Collection Note</h2>
+
+      <p>
+        <strong>Material:</strong> Lined cellulose paper, blue iron-gall ink,
+        oxidized metal staple fragment.
+      </p>
+      <p>
+        <strong>Function (Hypothesized):</strong> Draft of unsent
+        correspondence, possibly a personal or internal note written during
+        school operations.
+      </p>
+      <p>
+        <strong>Location Found:</strong> Beneath a collapsed metal desk in the
+        administrative office of Grant Street Middle School (Vanished Block
+        excavation zone, Chicago).
+      </p>
+
+      <p>
+        Recovered from beneath a collapsed desk, this faintly stained sheet
+        preserves a fragment of human hesitation. Written in blue iron-gall ink,
+        its sentences trail off mid-thought—the closing left blank. The erased
+        initials “J.L.” and rust marks from a missing staple hint at an identity
+        once present but now dissolved into the dust of the Vanished Block. Its
+        brittle fibers and water stains tell of collapse and time, yet its quiet
+        persistence defies loss. Once a simple note—perhaps a message never
+        sent—it now reads as an echo of intention: a record of pause, revision,
+        and the impossibility of closure. Within the museum, it stands as proof
+        that even silence leaves an imprint on paper, and memory lingers in
+        every unfinished line.
+      </p>
+    </div>
+    <!-- Hidden modal content: The Camera That Saw Twice -->
+    <div class="modal-item" id="modal-text-camera" hidden>
+      <h2 id="modal-title">The Camera That Saw Twice — Collection Note</h2>
+
+      <p>
+        <strong>Material:</strong> Aluminum alloy body, leatherette wrap,
+        optical glass, brass fittings.
+      </p>
+      <p>
+        <strong>Function (Hypothesized):</strong> Personal or small-business
+        use, possibly for portrait or architectural photography.
+      </p>
+      <p>
+        <strong>Location Found:</strong> Upstairs studio above the former
+        storefront at 112 Grant Street, across from the Grant Street Middle
+        School excavation site — recovered during the Vanished Block recovery
+        effort, Chicago.
+      </p>
+
+      <p>
+        Recovered from a collapsed upper-floor studio, this Falcon Optic
+        rangefinder embodies both the fragility and endurance of memory. Its
+        serial number places it within a 1952 production run, still holding a
+        single, half-exposed frame of Kodak Safety Film. The worn leatherette,
+        corroded trim, and loosened shutter reveal years of neglect, yet the
+        focus ring still turns smoothly. Once a tool of image-making, it now
+        serves as the subject—an instrument that captured the living city before
+        its disappearance. In the museum’s care, it becomes a lens turned
+        backward: seeing both the vanished photographer and the light that
+        outlived them.
+      </p>
+    </div>
+
     <!-- ===== Anthropology Section ===== -->
     <section id="anthropology" class="collection-section" style="display: none">
       <h2>Anthropology Collection</h2>
@@ -302,8 +411,11 @@
       <article class="artifact-card">
         <img
           src="../images/Collections/baseball_glove_jl.jpg"
-          alt="A worn Rawlings baseball glove with the initials 'J.L.' etched into the palm, lying in soil beside broken glass, an old candy wrapper, and a wooden bat handle from the Grant Street playground dig site"
+          alt="A worn Rawlings baseball mitt with the initials 'J.L.' etched into the palm, lying in soil beside broken glass, an old candy wrapper, and a wooden bat handle from the Grant Street playground dig site"
+          class="open-modal"
+          data-modal-target="#modal-text-mitt"
         />
+
         <div class="artifact-details">
           <h3>The Baseball Mitt — “J.L.”</h3>
           <div class="metadata-grid">
@@ -375,6 +487,8 @@
         <img
           src="../images/Collections/echo_reel_jll.jpg"
           alt="Large vintage reel-to-reel tape labeled 'ECHO – J.L.L.' found amid broken plaster and dust in a collapsed AV closet beneath the gymnasium wing"
+          class="open-modal"
+          data-modal-target="#modal-text-echotape"
         />
         <div class="artifact-details">
           <h3>The Echo Tape</h3>
@@ -446,6 +560,8 @@
         <img
           src="../images/Collections/window_pane_dust.jpg"
           alt="Broken window pane resting on dusty floorboards near a collapsed wall, the words 'DON’T FORGET' faintly written in dust."
+          class="open-modal"
+          data-modal-target="#modal-text-windowpane"
         />
         <div class="artifact-details">
           <h3>The Window Pane with Dust Writing</h3>
@@ -517,6 +633,641 @@
         </div>
       </article>
     </section>
+    <!-- Hidden modal content: The Baseball Mitt - J.L. -->
+    <div class="modal-item" id="modal-text-mitt" hidden>
+      <h2 id="modal-title">The Baseball Mitt — “J.L.” — Collection Note</h2>
+
+      <p>
+        <strong>Material:</strong> Tanned cowhide leather, cotton stitching,
+        metal rivets.
+      </p>
+      <p>
+        <strong>Function (Hypothesized):</strong> Recreational glove/mitt for
+        catching and field play.
+      </p>
+      <p>
+        <strong>Location Found:</strong> Playground lot adjacent to the South
+        Union District excavation (Vanished Block site, Chicago).
+      </p>
+
+      <p>
+        Found in the shallow soil of a long-buried playground, this youth-sized
+        Rawlings mitt carries the imprint of a small hand and the faint initials
+        “J.L.” inside the cuff. Its cracked leather and darkened palm bear
+        traces of soot, sweat, and linseed oil — evidence of long afternoons
+        spent fielding fly balls beneath a city sky. The mitt’s softened padding
+        suggests years of play, care, and pride — perhaps passed between friends
+        or siblings. Nearby candy wrappers, bottle glass, and rusted spokes root
+        it in a world of noise and laughter now silenced. Preserved here, the
+        mitt speaks of community, of fleeting games that left no record but the
+        shape of a child’s hand pressed into leather.
+      </p>
+    </div>
+    <!-- Hidden modal content: The Echo Tape -->
+    <div class="modal-item" id="modal-text-echotape" hidden>
+      <h2 id="modal-title">The Echo Tape — Collection Note</h2>
+
+      <p>
+        <strong>Material:</strong> Acetate reel-to-reel magnetic tape, plastic
+        spool, steel hub.
+      </p>
+      <p>
+        <strong>Function (Hypothesized):</strong> Student or instructor field
+        recording — possibly oral project or environmental sound test.
+      </p>
+      <p>
+        <strong>Location Found:</strong> Grant Street Middle School — AV storage
+        closet adjacent to the photography room.
+      </p>
+
+      <p>
+        Unearthed from a collapsed audiovisual closet, this warped acetate reel
+        bears a fading label: “ECHO — J.L.” Its edges curl from decades of
+        humidity, and the faint scent of ozone lingers where the tape once
+        turned between spools. When carefully restored, the recording flickers
+        with static and intermittent voices — laughter, footsteps, a distant
+        door closing — the faintest heartbeat of a vanished school. The tape’s
+        magnetic surface, shedding oxide with every pass, resists both silence
+        and decay. More than an artifact, it captures the ghost of presence
+        itself — proof that even sound can remember.
+      </p>
+    </div>
+    <!-- Hidden modal content: The Window Pane with Dust Writing -->
+    <div class="modal-item" id="modal-text-windowpane" hidden>
+      <h2 id="modal-title">
+        The Window Pane with Dust Writing — Collection Note
+      </h2>
+
+      <p>
+        <strong>Material:</strong> Soda-lime window glass fragment with adhered
+        soot and dust particulates.
+      </p>
+      <p>
+        <strong>Function (Hypothesized):</strong> Storefront glazing later used
+        as an impromptu message surface.
+      </p>
+      <p>
+        <strong>Location Found:</strong> Storefront façade rubble, South Union
+        District excavation (Vanished Block site, Chicago).
+      </p>
+
+      <p>
+        This trapezoidal fragment once framed a shop window overlooking the
+        Grant Street block. After the building’s abandonment, dust and soot
+        settled thick across its surface until a fingertip traced two words:
+        “don’t forget.” The letters, uneven and hurried, press through the dust
+        to expose a ghost of clarity beneath grime. When light passes across it,
+        the message flares momentarily — a gesture preserved by chance rather
+        than intent. The pane bridges architecture and intimacy, turning an
+        ordinary window into an unplanned memorial. In the Museum’s light, it
+        becomes both object and echo — a plea written not to someone, but to
+        time itself.
+      </p>
+    </div>
+
+    <!-- ===== Histories Section ===== -->
+    <section id="histories" class="collection-section" style="display: none">
+      <h2 class="section-heading">Histories</h2>
+      <p class="section-intro">
+        Each recovered item tells not only a physical story but also an
+        emotional and cultural one. These exhibit labels provide extended
+        interpretations—bridging archaeology and anthropology through the lens
+        of memory, decay, and rediscovery.
+      </p>
+
+      <!-- ===== HISTORY The Contact Sheet of the Vanished Block ===== -->
+      <article class="history-item">
+        <img
+          src="../images/collections/contact_sheet_vanished_block.jpg"
+          alt="1950s photographic contact sheet showing negatives from the vanished Grant Street block, wax-pencil marks visible on archival paper"
+          class="history-image"
+        />
+
+        <div class="history-text">
+          <h2>The Contact Sheet of the Vanished Block</h2>
+
+          <p>
+            <strong>Material:</strong> Resin-coated photographic paper with red
+            and white wax-pencil markings and a metal staple.
+          </p>
+          <p>
+            <strong>Function (Hypothesized):</strong> Student proof sheet used
+            to evaluate negatives before enlargement or grading.
+          </p>
+          <p>
+            <strong>Location Found:</strong> Darkroom cabinet, Grant Street
+            Middle School, Chicago.
+          </p>
+          <h3>What the Experts Believe</h3>
+          <p>
+            Recovered from a sealed school darkroom cabinet, this 6×6 proof
+            sheet—marked with wax pencil and faintly scented of fixer—offers the
+            last known visual record of a vanished neighborhood. Once part of a
+            student photography project, it captures fragments of ordinary life:
+            storefronts, crosswalks, and the facade of Grant Street Middle
+            School before demolition during the Vanished Block redevelopment.
+            The red circles and arrows, drawn by a student hand, guide the eye
+            toward moments never printed. Its curled edges and rusted staple
+            testify to years trapped beneath rubble, yet the silver halides
+            endure—proof of both chemical resilience and human intention.
+          </p>
+
+          <p>
+            Though originally used for grading and selection, the contact sheet
+            now invites us to reconsider what counts as “successful” imagery.
+            Each frame—unpolished and unchosen—holds equal claim to memory. The
+            archaeologist interprets it as both artifact and allegory: a mirror
+            of vanished instruction, lost youth, and urban change. In this
+            modest square of light, the city’s transformation is not monumental
+            but intimate—a child’s attempt to fix time, preserved by accident
+            beneath collapsing walls.
+          </p>
+
+          <p>
+            Today the artifact also functions as a pedagogical bridge between
+            analog and digital seeing. Within the Museum of Forgotten
+            Photographs, it demonstrates how photographic education once relied
+            on tactile, deliberate observation. Students learned not only
+            exposure and focus, but patience—the discipline of waiting for an
+            image to emerge in chemical baths. In this way, the contact sheet
+            preserves both a neighborhood and a method of learning that has
+            largely disappeared. Its endurance reminds us that memory is not
+            only in what we see, but in the slow processes that once revealed
+            it.
+          </p>
+
+          <h4>Comparative Note</h4>
+          <p>
+            Similar student proof sheets were common in mid-century public
+            school photography programs; few survive intact due to environmental
+            fragility.
+          </p>
+
+          <h4>Cautionary Note on Interpretation</h4>
+<p class="caution-note">
+  Interpretations are derived from material and contextual analysis within the Vanished Block excavation. 
+  Apparent personal or narrative connections remain speculative and should not be considered definitive without corroborating documentation.
+</p>
+
+          <h4>On Display Courtesy of</h4>
+          <p>The Museum of Forgotten Photographs, Education Wing Archives.</p>
+          <hr>
+        </div>
+      </article>
+      <!-- ===== The Letter That Names No One ===== -->
+      <article class="history-item">
+        <img
+          src="../images/collections/letter_that_names_no_one.jpg"
+          alt="A torn and yellowed lined letter recovered from beneath a collapsed school desk, faint blue ink and rust marks visible on paper"
+          class="history-image"
+        />
+
+        <div class="history-text">
+          <h2>The Letter That Names No One</h2>
+
+          <p>
+            <strong>Material:</strong> Lined cellulose paper, blue iron-gall
+            ink, oxidized metal staple fragment.
+          </p>
+          <p>
+            <strong>Function (Hypothesized):</strong> Unsent personal or
+            administrative correspondence written during active school
+            operations.
+          </p>
+          <p>
+            <strong>Location Found:</strong> Beneath a collapsed metal desk in
+            the administrative office of Grant Street Middle School, Chicago.
+          </p>
+
+         <h3>What the Experts Believe</h3>
+          <p>
+            Recovered from beneath a collapsed desk in the administrative office
+            of Grant Street Middle School, this lined sheet—torn, rust-stained,
+            and faintly perfumed by mildew—offers a human whisper amid the
+            Vanished Block debris. Written in blue iron-gall ink, the letter
+            appears unfinished, its salutation missing and signature erased. The
+            faint initials “J.L.” detected under raking light may connect it to
+            an unidentified staff member, though the context remains elusive.
+            Chemical analysis dates the ink and paper to the early 1960s; the
+            watermark “Midwest Pulp Co. 59” situates it in local manufacture.
+          </p>
+
+          <p>
+            Its administrative setting suggests a workplace note or personal
+            confession left unsent—a trace of emotion concealed within
+            institutional routine. The archaeologist reads the gaps as eloquent:
+            the hesitation marks, the pooled ink where the writer paused. As an
+            object, the letter merges fragility and endurance—paper fibers
+            weakened by moisture yet still intact, bearing the layered silence
+            of an everyday life interrupted.
+          </p>
+
+          <p>
+            Beyond its physicality, the letter functions as testimony to
+            emotional life within bureaucratic structures. Its tone, inferred
+            from phrasing and rhythm, suggests uncertainty—perhaps apology,
+            perhaps resignation. In the context of the Grant Street excavation,
+            it complements artifacts of learning and labor: attendance sheets,
+            photo assignments, and administrative memos. The letter’s
+            incompleteness invites empathy rather than certainty, reminding
+            viewers that archival silence can speak as loudly as written words.
+          </p>
+
+          <p>
+            Displayed alongside other finds from the Vanished Block, this
+            artifact connects private thought to public ruin. Its paper—creased,
+            humid, and almost translucent—acts as a membrane between past and
+            present, between a hand that once pressed ink into fiber and the
+            observer who now deciphers its residue. The Museum presents it not
+            to resolve its mystery but to honor it, preserving the quiet
+            persistence of an unfinished voice.
+          </p>
+
+          <h4>Cautionary Note on Interpretation</h4>
+<p class="caution-note">
+  Interpretations are derived from material and contextual analysis within the Vanished Block excavation. 
+  Apparent personal or narrative connections remain speculative and should not be considered definitive without corroborating documentation.
+</p>
+
+           <h4>Comparative Notes</h4>
+          <p>
+           Comparable ink and stock have been
+            identified in Chicago Public School archives, 1958–63, though none
+            preserve such personal tonal evidence.
+          </p>
+
+            <h4>On Display Courtesy Of</h4>
+          <p>
+          The Museum of Forgotten
+            Photographs, Office Artifacts Collection.
+          </p>
+          <hr>
+        </div>
+      </article>
+      <!-- ===== The Camera That Saw Twice ===== -->
+      <article class="history-item">
+        <img
+          src="../images/collections/camera_that_saw_twice.jpg"
+          alt="A mid-century rangefinder camera recovered from a collapsed studio, showing worn leatherette, oxidized trim, and fogged lens"
+          class="history-image"
+        />
+
+        <div class="history-text">
+          <h2>The Camera That Saw Twice</h2>
+
+          <p>
+            <strong>Material:</strong> Aluminum alloy body, leatherette wrap,
+            optical glass, brass fittings.
+          </p>
+          <p>
+            <strong>Function (Hypothesized):</strong> Personal or small-business
+            rangefinder camera, used for portrait and architectural photography.
+          </p>
+          <p>
+            <strong>Location Found:</strong> Upstairs studio at 112 Grant
+            Street, opposite Grant Street Middle School, recovered during the
+            Vanished Block excavation.
+          </p>
+
+          <h3>What the Experts Believe</h3>
+          <p>
+            Found amid plaster dust and fallen joists, this compact rangefinder
+            camera embodies the dual gaze of photography—one mechanical, one
+            human. Its aluminum body is pitted with oxidation, the leatherette
+            separating at the baseplate, the viewfinder glass fogged. Yet inside
+            the cartridge remained a partial frame of exposed Kodak Safety Film,
+            frozen mid-advance for over seventy years. The frame counter stopped
+            at twenty-four; the shutter still whispers faintly when pressed.
+          </p>
+
+          <p>
+            Chemical analysis confirms mid-century manufacture by Falcon Optic
+            Co. (serial 51-7428), with a 45 mm fixed lens common to 1952
+            domestic runs. Contextual evidence—the cracked flashbulb socket,
+            rusted tripod head, and signage fragments reading “Photos – Same
+            Day”—suggests a small local studio, perhaps used for class portraits
+            or community documentation. The archaeologist interprets it as both
+            tool and witness: a camera that recorded the city once, and now
+            again, through the lens of rediscovery.
+          </p>
+
+          <p>
+            In curatorial interpretation, this artifact bridges the technical
+            and the emotional. Its corrosion tells of humidity and collapse, but
+            its intact shutter mechanism reflects durability born of craft and
+            care. The single surviving frame inside—half an image—transforms the
+            camera into a reliquary of interruption, a visual heartbeat stopped
+            mid-pulse. For researchers, it illustrates how memory persists in
+            material form; for viewers, it mirrors their own impulse to capture
+            what time refuses to hold still.
+          </p>
+
+          <p>
+            Displayed within the Excavation Lab Collection, The Camera That Saw
+            Twice invites reflection on photography’s recursive nature. Every
+            rediscovered image looks back at us. In this object, the act of
+            documentation folds upon itself: a machine built to preserve sight
+            becomes, through loss and recovery, a photograph of time.
+          </p>
+
+          <h4>Comparative Notes</h4>
+          <p>
+            Similar Falcon rangefinders survive in educational archives, though
+            none retain film remnants within their chambers.
+          </p>
+<h4>Cautionary Note on Interpretation</h4>
+<p class="caution-note">
+  Interpretations are derived from material and contextual analysis within the Vanished Block excavation. 
+  Apparent personal or narrative connections remain speculative and should not be considered definitive without corroborating documentation.
+</p>
+          <h4>On Display Courtesy of</h4
+          <p>
+            The Museum of Forgotten
+            Photographs, Excavation Lab Collection.
+          </p>
+          <hr>
+        </div>
+      </article>
+      <!-- ===== The Baseball Mitt — “J.L.” ===== -->
+      <article class="history-item">
+        <img
+          src="../images/collections/baseball_glove_jl.jpg"
+          alt="A worn 1950s Rawlings youth baseball mitt with the initials J.L. faintly inked inside the palm, resting in excavated soil with debris"
+          class="history-image"
+        />
+
+        <div class="history-text">
+          <h2>The Baseball Mitt — “J.L.”</h2>
+
+          <p>
+            <strong>Material:</strong> Tanned cowhide leather, cotton stitching,
+            metal rivets.
+          </p>
+          <p>
+            <strong>Function (Hypothesized):</strong> Youth baseball mitt/glove
+            used for recreational field play.
+          </p>
+          <p>
+            <strong>Location Found:</strong> Playground lot adjacent to the
+            South Union District excavation (Vanished Block site, Chicago).
+          </p>
+
+          <h3>What the Experts Believe</h3>
+          <p>
+            Found near broken glass and a rusted bat handle, this small Rawlings
+            mitt preserves the form of its wearer’s hand as if still mid-catch.
+            The initials “J.L.” inked faintly inside the cuff match those found
+            elsewhere in the excavation—a recurring mark of presence across
+            time. Its softened leather, soot-darkened palm, and cracked webbing
+            speak to years of play and the quiet intimacy of objects that once
+            belonged to children who never imagined they’d be unearthed.
+          </p>
+
+          <p>
+            Material analysis dates the glove to the mid-1950s, supported by
+            stitching pattern and emboss traces consistent with the Rawlings
+            youth line of that era. Associated finds—a PayDay candy wrapper,
+            glass fragments, and bicycle spoke—situate the artifact within the
+            rhythms of postwar neighborhood life. In its modest curvature lies
+            the archaeology of motion: the memory of games paused by
+            redevelopment, the tactile history of youth and belonging.
+          </p>
+
+          <p>
+            The anthropologist reads the mitt as both artifact and echo—a record
+            of touch more than sight. Its interior bears oil stains where
+            fingers rested, a signature of repetition and muscle memory. Once
+            the tool of a game, it now performs a different function: preserving
+            the gesture of catching itself. When displayed, it asks the viewer
+            to consider how play, labor, and identity intertwine in the physical
+            remains of everyday life.
+          </p>
+
+          <p>
+            Contextually, the mitt offers a counterpoint to the industrial and
+            educational artifacts of the same stratum. Where the camera and
+            letter speak to adult worlds of work and record, the glove recalls
+            community, companionship, and fleeting youth. Each crease becomes a
+            line in an unspoken diary of afternoons spent beneath open skies—a
+            testament to joy left behind in the soil of urban change.
+          </p>
+
+          <h4>Comparative Note</h4>
+          <p>
+           Youth gloves of this period are rare in
+            situ; most surviving examples are family-kept rather than recovered
+            archaeologically.
+          </p>
+<h4>Cautionary Note on Interpretation</h4>
+<p class="caution-note">
+  Interpretations are derived from material and contextual analysis within the Vanished Block excavation. 
+  Apparent personal or narrative connections remain speculative and should not be considered definitive without corroborating documentation.
+</p>
+          <h4>On Display Courtesy of</h4>
+          <p>
+            The Museum of Forgotten
+            Photographs, Cultural Memory Collection.
+          </p>
+          <hr>
+        </div>
+      </article>
+      <!-- ===== The Echo Tape ===== -->
+      <article class="history-item">
+        <img
+          src="../images/collections/echo_reel_jll.jpg"
+          alt="A warped vintage reel-to-reel tape labeled 'ECHO – J.L.L.' resting amid plaster dust and broken AV equipment from a collapsed school room"
+          class="history-image"
+        />
+
+        <div class="history-text">
+          <h2>The Echo Tape</h2>
+
+          <p>
+            <strong>Material:</strong> Acetate reel-to-reel magnetic tape,
+            plastic spool, steel hub.
+          </p>
+          <p>
+            <strong>Function (Hypothesized):</strong> Educational or
+            student-made recording, possibly an oral project or environmental
+            sound test.
+          </p>
+          <p>
+            <strong>Location Found:</strong> Grant Street Middle School — AV
+            storage closet adjacent to the photography room.
+          </p>
+
+            <h3>What the Experts Believe</h3>
+          <p>
+            This warped reel of magnetic tape, labeled “ECHO – J.L.L.” in
+            graphite pencil, was recovered from beneath plaster dust and a
+            collapsed microphone stand in the school’s AV closet. The outer edge
+            is rippled from humidity; the oxide layer sheds at each bend,
+            whispering static when replayed. One taped splice near the leader
+            suggests a deliberate edit—perhaps a student cutting and rejoining
+            sound fragments during an early experiment in recorded echo.
+          </p>
+
+          <p>
+            Its chemical and structural profile—cellulose-acetate base, steel
+            hub, Ampex-style mold code R-42—dates to the late 1950s, consistent
+            with public-school audio equipment of that period. The recording’s
+            audible remnants reveal faint voices, footsteps, and what may be a
+            single repeated word. Whether test or message, its tone is
+            hauntingly intimate: a conversation trapped in metal and dust. As an
+            artifact, the tape bridges the sensory and the archival—a moment of
+            sound caught twice, then lost again to silence.
+          </p>
+
+          <p>
+            The anthropologist interprets the Echo Tape as both technological
+            relic and emotional residue. Within its deteriorating medium, sound
+            becomes sediment—an imprint of learning, collaboration, or play. The
+            tape’s fragility mirrors the impermanence of the voices it once
+            held, while its endurance testifies to the persistence of human
+            curiosity. It captures not merely what was said but the very act of
+            listening, preserved as artifact.
+          </p>
+
+          <p>
+            In exhibition, its looping form evokes cyclical memory—the replay of
+            an absent speaker, the hum of forgotten classrooms, the faint
+            resonance of discovery. Like the camera and the letter from the same
+            excavation, it resists closure, inviting audiences to lean closer,
+            to hear not certainty but echo: a sonic ghost of the Vanished
+            Block’s interior life.
+          </p>
+
+          <h4>Comparative Note</h4>
+          <p>
+            Similar reels from mid-century school
+            programs survive only in fragmentary condition, often without
+            audible content.
+          </p>
+
+     <h4>Cautionary Note on Interpretation</h4>
+<p class="caution-note">
+  Interpretations are derived from material and contextual analysis within the Vanished Block excavation. 
+  Apparent personal or narrative connections remain speculative and should not be considered definitive without corroborating documentation.
+</p>
+
+          <h4>On Display Courtesy of</h4>
+          <p>
+            The Museum of Forgotten
+            Photographs, Audio Memory Archive.
+          </p>
+          <hr>
+        </div>
+      </article>
+      <!-- ===== The Window Pane with Dust Writing ===== -->
+      <article class="history-item">
+        <img
+          src="../images/collections/window_pane_dust.jpg"
+          alt="Mid-century trapezoidal window glass fragment with soot and dust, fingertip letters reading 'don't forget' traced across the surface"
+          class="history-image"
+        />
+
+        <div class="history-text">
+          <h2>The Window Pane with Dust Writing</h2>
+
+          <p>
+            <strong>Material:</strong> Soda-lime window glass fragment with
+            adhered soot and dust particulates.
+          </p>
+          <p>
+            <strong>Function (Hypothesized):</strong> Architectural glazing
+            repurposed as an impromptu writing surface.
+          </p>
+          <p>
+            <strong>Location Found:</strong> Storefront façade rubble, South
+            Union District excavation (Vanished Block site, Chicago).
+          </p>
+
+          <h3>What the Experts Believe</h3>
+          <p>
+            Recovered from the rubble of a demolished storefront, this
+            trapezoidal pane bears a message written not in ink or paint but in
+            dust: the words <em>“don’t forget”</em> traced by a fingertip
+            through layers of soot and particulate. The glass, 3.2&nbsp;mm thick
+            with a faint green edge tint, once framed a shop window along Grant
+            Street before the redevelopment that erased the block. When found,
+            its fractured surface was surrounded by bits of signage,
+            photo-supply packaging, and a rusted display bracket—evidence of its
+            urban, commercial life.
+          </p>
+
+          <p>
+            Under magnification, microscopic oil halos reveal where human skin
+            contacted the dust, suggesting quick, impulsive writing—perhaps by a
+            passerby, worker, or student observing the destruction around them.
+            The pressure variations in each letter indicate hesitation at the
+            start of the phrase, then firmer strokes through the word
+            <em>forget</em>, as though insistence were being recorded directly
+            into matter. The archaeologist interprets the pane as both message
+            and memorial, a fleeting protest against disappearance that only
+            survived because dust adhered and hardened over time.
+          </p>
+
+          <p>
+            Compositional testing confirms the glass as soda-lime, with
+            factory-ground edges typical of mid-century storefront glazing. Heat
+            discoloration along one corner hints at proximity to a localized
+            fire or welding torch during demolition. The soot itself, chemically
+            distinct from modern particulates, carries traces of coal and
+            cellulose ash, placing the deposit between the late 1940s and early
+            1960s— contemporary with other Vanished Block artifacts.
+          </p>
+
+          <p>
+            In curatorial interpretation, the<em>Window Pane with Dust Writing</em>
+            stands as a dialogue betweenpresence and erasure. It records an act of remembering performed on
+            a surface designed for transparency—an inscription made visible only
+            because of neglect. The anthropologist reads it as urban elegy: a
+            plea written to no one in particular, preserved only because it was
+            never cleaned away.
+          </p>
+
+          <h4>Comparative Note</h4>
+          <p>
+            Comparable dust inscriptions have been
+            documented in post-demolition urban sites worldwide, though few
+            retain such legible human gesture.
+          </p>
+
+<h4>Cautionary Note on Interpretation</h4>
+<p class="caution-note">
+  Interpretations are derived from material and contextual analysis within the Vanished Block excavation. 
+  Apparent personal or narrative connections remain speculative and should not be considered definitive without corroborating documentation.
+</p>
+
+          <h4>On Display Courtesy of</h4>
+          <p>
+            The Museum of Forgotten
+            Photographs, Urban Memory Collection.
+          </p>
+          <hr>
+        </div>
+      </article>
+
+      <p class="back-link">
+        <a href="collections.html">← Back to Collections</a>
+      </p>
+    </section>
+
+    <!-- ===== Modal Shell ===== -->
+    <div
+      class="modal"
+      id="modal"
+      style="display: none"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">x</button>
+        <div id="modal-body"></div>
+        <!-- text gets injected here -->
+      </div>
+    </div>
 
     <!-- ===== Footer ===== -->
     <footer>
@@ -536,6 +1287,52 @@
         sections.forEach((s) => (s.style.display = "none"));
         document.getElementById(section).style.display = "block";
       }
+    </script>
+
+    <!-- ===== Script: Modal Functionality ===== -->
+    <script>
+      (function () {
+        const modal = document.getElementById("modal");
+        const modalBody = document.getElementById("modal-body");
+        const closeBtn = modal.querySelector(".close-modal");
+        let lastTrigger = null;
+
+        function openFrom(selector, trigger) {
+          const src = document.querySelector(selector);
+          if (!src) {
+            console.warn("Missing modal content:", selector);
+            return;
+          }
+          modalBody.innerHTML = src.innerHTML;
+          modal.style.display = "flex";
+          lastTrigger = trigger || null;
+          closeBtn.focus();
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+          modal.style.display = "none";
+          modalBody.innerHTML = "";
+          document.body.style.overflow = "";
+          if (lastTrigger) lastTrigger.focus();
+        }
+
+        document.addEventListener("click", (e) => {
+          const trigger = e.target.closest("[data-modal-target]");
+          if (trigger) {
+            e.preventDefault();
+            openFrom(trigger.getAttribute("data-modal-target"), trigger);
+            return;
+          }
+          if (e.target === modal || e.target.closest(".close-modal"))
+            closeModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.style.display === "block")
+            closeModal();
+        });
+      })();
     </script>
   </body>
 </html>
