@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "catalogId": "MFP-A002",
+    "name": "The Letter That Names No One",
+    "material": "Lined cellulose paper, blue iron-gall ink, oxidized metal staple fragment.",
+    "estimatedAge": "c. 1960–1963 (based on “Midwest Pulp Co. 59” watermark and ink chemical profile).",
+    "locationFound": "Beneath a collapsed metal desk in the administrative office of Grant Street Middle School (Vanished Block excavation zone, Chicago).",
+    "likelyPurpose": "Draft of unsent correspondence, possibly a personal or internal note written during school operations.",
+    "physicalProperties": "Yellowed surface; light water stain upper-right quadrant; small rust halo near staple puncture; mild mildew scent; fibers weakened along central fold.",
+    "culturalContext": "Found among administrative debris including ledger pages, PTA circulars, and student record envelopes.",
+    "burialContext": "Layered under plaster and desk-frame debris; embedded dust and carbon ash residue from ceiling collapse.",
+    "comparison": "Comparable paper stock and ink type documented in 1950s–60s Chicago Public School correspondence archives.",
+    "evidenceOfUse": "Pencil indentation traces from earlier draft beneath ink layer; pooled ink where nib paused mid-line; erased initials “J.L.” faintly visible under raking light near the lower right corner.",
+    "foundWith": "Two fragments of manila folder, one labeled “Field Trip Perm.” and another with partial label “Staff.”",
+    "manufactureClues": "Watermark “MIDWEST PULP CO. 59”; ruled blue lines printed offset from sheet margin typical of regional stationery mills; staple alloy matches mid-century U.S. office stock.",
+    "preservationState": "Fair; structurally intact but brittle; partial legibility loss from moisture exposure; ink feathering along lower edge.",
+    "dimensions": "18 × 23 cm; ~6 g; single sheet torn along left margin with slight curl at lower edge.",
+    "confidence": "Moderate; ink chemistry verified but contextual link to photographs inferred; textual decoding in progress."
+  },
+  "agentB": {
+    "discipline": "Analog Archaeologist / Memory Excavator",
+    "credentials": "PhD in Archaeology from the University of Edinburgh. Specialized in analog restoration and digital imaging; trained in chemistry, art history, and data preservation. Leads The Excavation Lab at the Museum of Forgotten Photographs. Recipient of the Lumen Foundation Fellowship for ‘Chemical Memory in Damaged Negatives.’",
+    "lens": "Material Culture & Cultural Semiotics — examines how light, chemistry, and decay preserve memory in photographic and documentary artifacts.",
+    "method": "Analog restoration, microscopic ink and fiber analysis, and archival cross-reference with mid-century Chicago public records to reconstruct context and intent.",
+    "purpose": "Exhibit Label (Museum Style) for gallery visitors; ~400 words; interpretive, scholarly-but-approachable tone.\nPurpose: wall-mounted label accompanying artifact; situates the object within the Vanished Block story and explores how ordinary paper becomes a vessel of memory and loss.",
+    "reflections": "Believes every fragment rescued from oblivion is an act of resurrection — evidence that memory persists even when identity is erased.",
+    "special": "Partially color-blind; perceives tone, shape, and shadow as pure form rather than distraction — an advantage when reading faded documents by texture rather than color."
+  },
+  "meta": {
+    "createdAt": "2025-11-02T20:18:34.730Z",
+    "source": "DEV109 Prompt-o-Rama v1"
+  }
+}

@@ -84,17 +84,26 @@
       }
 
       pre#summary {
-        background: #f8f8f8;
-        padding: 12px;
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        white-space: pre;
+        text-align: left; /* keep labels readable */
+        padding: 1.5rem 1.5rem 1.5rem 12rem;
+        background-color: #f8f8f8;
         border-radius: 8px;
         border: 1px solid #ccc;
+        font-feature-settings: "tnum", "lnum";
+        line-height: 1.4;
+        width: 75%;
+        margin: 1.5rem auto;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       }
 
       .actions {
-        margin-top: 20px;
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 10px;
+        margin-top: 0.5rem;
       }
 
       button,
@@ -113,22 +122,7 @@
       a.button:hover {
         background-color: #007acc;
       }
-      /* Aligns currency values in summary block */
-      #summary {
-        font-family: "Courier New", monospace;
-        white-space: pre;
-        text-align: right;
-        padding: 1rem;
-        background-color: #f8f8f8;
-        border-radius: 8px;
-        font-feature-settings: "tnum", "1num";
-        line-height: 1.4;
-      }
 
-      /* Keeps the label text aligned left while values stay right-aligned */
-      #summary::first-line {
-        text-align: left;
-      }
       .cart-table {
         width: 100%;
         border-collapse: collapse;
@@ -338,15 +332,15 @@
 
         // summary text (commission-style)
         const summaryText = `
-Subtotal of Item Totals:     ${money(itemTotal)}
-Volume Discount:              ${money(-appliedVolume)}
-Member Discount:              ${money(-appliedMember)}
-Shipping:                     ${money(SHIPPING_RATE)}
-Subtotal (Taxable Amount):    ${money(subtotal)}
-Tax Rate %:                   ${(TAX_RATE * 100).toFixed(1)}%
-Tax Amount $:                 ${money(taxAmount)}
------------------------------------------
-Invoice Total:                ${money(invoiceTotal)}
+Subtotal of Item Totals:                      ${money(itemTotal)}
+Volume Discount:                              ${money(-appliedVolume)}
+Member Discount:                              ${money(-appliedMember)}
+Shipping:                                     ${money(SHIPPING_RATE)}
+Subtotal (Taxable Amount):                    ${money(subtotal)}
+Tax Rate %:                                   ${(TAX_RATE * 100).toFixed(1)}%
+Tax Amount $:                                 ${money(taxAmount)}
+--------------------------------------------------------
+Invoice Total:                                ${money(invoiceTotal)}
   `;
 
         summaryPre.textContent = summaryText;

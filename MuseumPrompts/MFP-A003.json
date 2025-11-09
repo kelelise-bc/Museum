@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "catalogId": "MFP-A003",
+    "name": "The Camera That Saw Twice",
+    "material": "Aluminum alloy body, leatherette wrap, optical glass, brass fittings.",
+    "estimatedAge": "c. 1951–1955 (based on serial block and Falcon Optic Co. logo typography).",
+    "locationFound": "Upstairs studio above the former storefront at 112 Grant Street, across from the Grant Street Middle School excavation site — recovered during the Vanished Block recovery effort, Chicago.",
+    "likelyPurpose": "Personal or small-business use, possibly for portrait or architectural photography.",
+    "physicalProperties": "Matte black finish with worn corners; pitting along chrome trim; aperture ring stiff from oxidation; shutter lever smooth but loose; lens cap missing.",
+    "culturalContext": "Studio identified by remnants of darkroom supplies, backdrop cloth fragments, and a signboard fragment reading “Photos — Same Day.",
+    "burialContext": "Collapsed upper-floor structure; mixed plaster, ash, and paper sediment; partial roof cave-in; camera located within debris pile near window frame.",
+    "comparison": "Comparable to mid-1950s Falcon Optic rangefinder cameras used in local portrait studios and school journalism programs.",
+    "evidenceOfUse": "Fingerprint oil patterns on focus ring; frame counter frozen at 24 exposures; faint residue of dried film lubricant; one partial frame of exposed film inside cartridge.",
+    "foundWith": "Rusted tripod head, cracked flashbulb socket, fragments of a glass negative envelope.",
+    "manufactureClues": "Serial no. 51-7428 matches Falcon Optic 1952 domestic run; pressure-plate etching and spool markings consistent with Kodak Safety Film stock.",
+    "preservationState": "Functional but unstable; minor corrosion at hinge screws; leatherette separating at baseplate; viewfinder glass fogged; shutter curtain shows faint light leak along lower seam.",
+    "dimensions": "13.5 × 7.8 × 4.2 cm; 620 g; compact rectangular rangefinder camera with fixed 45 mm lens mount.",
+    "confidence": "High; serial number and manufacturer verified; partial film confirmed as Kodak Safety Film; contextual match to Vanished Block studio debris"
+  },
+  "agentB": {
+    "discipline": "Analog Archaeologist / Memory Excavator — focuses on recovering and contextualizing photographic and documentary artifacts as cultural memory objects rather than mere images.",
+    "credentials": "PhD in Archaeology from the University of Edinburgh; specialized training in analog restoration and digital imaging.  Background in chemistry, art history, and data preservation.  Leads The Excavation Lab at the Museum of Forgotten Photographs.  Recipient of the Lumen Foundation Fellowship for her research “Chemical Memory in Damaged Negatives.”  Her practice bridges scientific analysis and aesthetic empathy—treating each image as a chemical record of time itself.",
+    "lens": "Material Culture & Cultural Semiotics — examines how light, chemistry, and decay preserve memory within physical media, and how each layer of damage adds its own language to the artifact.",
+    "method": "Uses analog restoration, optical surface mapping, and archival cross-reference to reconstruct lost contexts.  Studies chemical signatures in film emulsions and paper fibers to trace the continuity between object and moment.  Believes interpretation must balance empirical evidence with respect for the object’s emotional residue.",
+    "purpose": "Catalog Description (~500 words) for archival and scholarly readers. Purpose is to document the artifact in full material, contextual, and interpretive detail for inclusion in the Museum of Forgotten Photographs’ permanent database.\nThe audience is curators, archivists, conservators, and researchers seeking to understand how this object contributes to the reconstructed narrative of the Vanished Block and the tone should be formal, methodical, and precise — grounded in factual analysis, yet attentive to the subtle human and material traces that give the object meaning.",
+    "reflections": "Believes every fragment rescued from oblivion is an act of resurrection — proof that memory endures even when identity is erased.  Often reflects that her role is less about restoring clarity than about listening to what the artifact refuses to forget.",
+    "special": "Partially color-blind; perceives tone, shape, and shadow as pure form rather than distraction — an advantage when decoding faded negatives and oxidized film.  Her discipline of slow seeing and methodical reconstruction defines the ethos of the Museum of Forgotten Photographs."
+  },
+  "meta": {
+    "createdAt": "2025-11-02T20:31:08.412Z",
+    "source": "DEV109 Prompt-o-Rama v1"
+  }
+}
