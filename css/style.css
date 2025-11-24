@@ -160,6 +160,11 @@ nav a:active {
   filter: brightness(120%) contrast(80%);
 }
 
+.intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
 #intro h2 {
   font-size: 2rem;
   font-weight: 500;
